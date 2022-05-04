@@ -128,71 +128,71 @@
 
 <!DOCTYPE HTML>
 <html lang = "pl">
-<head>
-	<meta charset = "utf-8" />
-	<title>Osadnicy - rejestracja</title>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-	<style>
-		.error{
-			color: red;
-			margin-top: 10px;
-			margin-bottom: 10px;
-		}
-	</style>
-</head>
-<body>
-	<form method = "post">
-		Nickname: <br /> <input type = "text" name = "nick" /><br />
-		<?php
-			if(isset($_SESSION['e_nick']))
-			{
-				echo '<div class = "error">'.$_SESSION['e_nick'].'</div>';
-				unset($_SESSION['e_nick']);
+	<head>
+		<meta charset = "utf-8" />
+		<title>Osadnicy - rejestracja</title>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<style>
+			.error{
+				color: red;
+				margin-top: 10px;
+				margin-bottom: 10px;
 			}
-		?>
-		
-		E-mail: <br /> <input type = "text" name = "email" /><br />
-		
-		<?php
-			if(isset($_SESSION['e_email']))
-			{
-				echo '<div class = "error">'.$_SESSION['e_email'].'</div>';
-				unset($_SESSION['e_email']);
-			}
-		?>
-		
-		Hasło: <br /> <input type = "password" name = "pwd1"><br />
-		
-		<?php
-			if(isset($_SESSION['e_pwd']))
-			{
-				echo '<div class = "error">'.$_SESSION['e_pwd'].'</div>';
-				unset($_SESSION['e_pwd']);
-			}
-		?>
-		
-		Powtórz hasło: <br /> <input type = "password" name = "pwd2"><br />
-		<label><input type = "checkbox" name = "regulamin" /> Akceptuje regulamin</label>
-		<?php
-			if(isset($_SESSION['e_regulamin']))
-			{
-				echo '<div class = "error">'.$_SESSION['e_regulamin'].'</div>';
-				unset($_SESSION['e_regulamin']);
-			}
-		?>
-		
-		<div class="g-recaptcha" data-sitekey="6LfS8aYfAAAAAPB6wApV5wozDk1NFaynpYr665pr"></div>
-		<?php
-			if(isset($_SESSION['e_captcha']))
-			{
-				echo '<div class = "error">'.$_SESSION['e_captcha'].'</div>';
-				unset($_SESSION['e_captcha']);
-			}
-		?>
-		
-		<br />
-		<input type = "submit" value = "Zarejestruj się" />	
-	</form>
+		</style>
+	</head>
+	<body>
+		<form method = "post">
+			Nickname: <br /> <input type = "text" name = "nick" /><br />
+			<?php
+				if(isset($_SESSION['e_nick']))
+				{
+					echo '<div class = "error">'.$_SESSION['e_nick'].'</div>';
+					unset($_SESSION['e_nick']);
+				}
+			?>
 
-</body>
+			E-mail: <br /> <input type = "text" name = "email" /><br />
+
+			<?php
+				if(isset($_SESSION['e_email']))
+				{
+					echo '<div class = "error">'.$_SESSION['e_email'].'</div>';
+					unset($_SESSION['e_email']);
+				}
+			?>
+
+			Hasło: <br /> <input type = "password" name = "pwd1"><br />
+
+			<?php
+				if(isset($_SESSION['e_pwd']))
+				{
+					echo '<div class = "error">'.$_SESSION['e_pwd'].'</div>';
+					unset($_SESSION['e_pwd']);
+				}
+			?>
+
+			Powtórz hasło: <br /> <input type = "password" name = "pwd2"><br />
+			<label><input type = "checkbox" name = "regulamin" /> Akceptuje regulamin</label>
+			<?php
+				if(isset($_SESSION['e_regulamin']))
+				{
+					echo '<div class = "error">'.$_SESSION['e_regulamin'].'</div>';
+					unset($_SESSION['e_regulamin']);
+				}
+			?>
+
+			<div class="g-recaptcha" data-sitekey="6LfS8aYfAAAAAPB6wApV5wozDk1NFaynpYr665pr"></div>
+			<?php
+				if(isset($_SESSION['e_captcha']))
+				{
+					echo '<div class = "error">'.$_SESSION['e_captcha'].'</div>';
+					unset($_SESSION['e_captcha']);
+				}
+			?>
+
+			<br />
+			<input type = "submit" value = "Zarejestruj się" />	
+		</form>
+
+	</body>
 </html>
